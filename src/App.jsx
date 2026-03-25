@@ -9,20 +9,17 @@ import Favourite from "./pages/Favourite";
 import Navbar from "./components/Navbar";
 import { MovieProvider } from "./contexts/MovieContext";
 
-
-
 function App() {
   return (
-   <MovieProvider>
-      <Navbar/>
-    <main className="main-content">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="favourites" element={<Favourite/>} />
-      </Routes>
-    </main>
-   </MovieProvider>
-   
+    <MovieProvider>
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="favourites" element={<Favourite />} />
+        </Routes>
+      </main>
+    </MovieProvider>
   );
 }
 
