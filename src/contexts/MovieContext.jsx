@@ -4,9 +4,21 @@ export const MovieContext = createContext();
 
 export const MovieProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
+
+  // way 1 
     const storedFavs = localStorage.getItem("favorites");
     return storedFavs ? JSON.parse(storedFavs) : [];
   });
+
+  // way 2 
+
+//   const getInitialFavorites = () => {
+//   const storedFavs = localStorage.getItem("favorites");
+//   return storedFavs ? JSON.parse(storedFavs) : [];
+// };
+
+// const [favorites, setFavorites] = useState(getInitialFavorites);
+
   const addFavorites = (movie) => {
     const isExist = favorites.some((fav) => fav.id === movie.id);
 
