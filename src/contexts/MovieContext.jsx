@@ -3,9 +3,8 @@ import { createContext, useEffect, useState } from "react";
 export const MovieContext = createContext();
 
 export const MovieProvider = ({ children }) => {
+    // way 1 
   const [favorites, setFavorites] = useState(() => {
-
-  // way 1 
     const storedFavs = localStorage.getItem("favorites");
     return storedFavs ? JSON.parse(storedFavs) : [];
   });
@@ -16,7 +15,6 @@ export const MovieProvider = ({ children }) => {
 //   const storedFavs = localStorage.getItem("favorites");
 //   return storedFavs ? JSON.parse(storedFavs) : [];
 // };
-
 // const [favorites, setFavorites] = useState(getInitialFavorites);
 
   const addFavorites = (movie) => {
